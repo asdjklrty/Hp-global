@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification</title>
+    <script>
+        function verifyCertificate() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const certId = urlParams.get('id');
+            if (certId === '2aec98e6-30e7-46f4-9c4f-a99483b589ab') {
+                document.getElementById('certificate').src = 'https://www.lifeglobal.org/certificate/2aec98e6-30e7-46f4-9c4f-a99483b589ab';
+                document.getElementById('certLink').href = 'https://www.lifeglobal.org/certificate/2aec98e6-30e7-46f4-9c4f-a99483b589ab';
+            } else {
+                document.getElementById('message').innerText = 'Invalid Certificate ID';
+            }
+        }
+    </script>
+</head>
+<body onload="verifyCertificate()">
+    <h1>Certificate Verification</h1>
+    <p id="message">Loading certificate...</p>
+    <iframe id="certificate" width="100%" height="500px"></iframe>
+    <p><a id="certLink" href="#" target="_blank">Download Certificate</a></p>
+</body>
+</html>
